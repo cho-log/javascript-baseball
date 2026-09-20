@@ -1,6 +1,6 @@
 export default class BaseballGame {
   play(computerInputNumbers, userInputNumbers) {
-    if (!isValid(userInputNumbers)) return;
+    if (!isValid(userInputNumbers)) return '';
 
     const strike = countStrike(computerInputNumbers, userInputNumbers);
     const ball = countSame(computerInputNumbers, userInputNumbers) - strike;
