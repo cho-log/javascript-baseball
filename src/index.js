@@ -18,7 +18,7 @@ function isValid(numbers) {
     alert('1~9사이의 숫자가 아닙니다.');
     return 0;
   }
-  if (numbers.length !== 3) {
+  if (numbers.length !== sizeOfNumbers) {
     alert('숫자가 3자리가 아닙니다.');
     return 0;
   }
@@ -29,9 +29,8 @@ function isValid(numbers) {
   return 1;
 }
 function isInRange(numbers) {
-  for (let i = 0; i < sizeOfNumbers; i++) {
-    if (numbers[i] < 1 || 9 < numbers[i]) return 0;
-  }
+  for (let i = 0; i < numbers.length; i++)
+    if (!numbers[i].match(/[1-9]/)) return 0;
   return 1;
 }
 function isDuplicate(numbers) {
