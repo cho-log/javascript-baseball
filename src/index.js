@@ -34,12 +34,8 @@ function isInRange(numbers) {
   return 1;
 }
 function isDuplicate(numbers) {
-  if (
-    numbers[0] === numbers[1] ||
-    numbers[1] === numbers[2] ||
-    numbers[2] === numbers[0]
-  )
-    return 1;
+  const sizeOfSet = makeSet(numbers).length;
+  if (sizeOfSet !== sizeOfNumbers) return 1;
   return 0;
 }
 function makeSet(numbers) {
