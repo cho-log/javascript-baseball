@@ -42,6 +42,11 @@ function isDuplicate(numbers) {
     return 1;
   return 0;
 }
+function makeSet(numbers) {
+  const set = new Set();
+  for (let i = 0; i < numbers.length; i++) set.add(numbers[i]);
+  return set;
+}
 function countSame(numbers1, numbers2) {
   let count = 0;
   for (let i = 0; i < sizeOfNumbers; i++) {
