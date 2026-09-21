@@ -16,26 +16,26 @@ function displayButton(button, flag) {
 function isValid(numbers) {
   if (!isInRange(numbers)) {
     alert('1~9사이의 숫자가 아닙니다.');
-    return 0;
+    return false;
   }
   if (numbers.length !== sizeOfNumbers) {
     alert('숫자가 3자리가 아닙니다.');
-    return 0;
+    return false;
   }
   if (isDuplicate(numbers)) {
     alert('중복된 숫자가 있습니다.');
-    return 0;
+    return false;
   }
-  return 1;
+  return true;
 }
 function isInRange(numbers) {
-  for (let i = 0; i < numbers.length; i++) if (!numbers[i].match(/[1-9]/)) return 0;
-  return 1;
+  for (let i = 0; i < numbers.length; i++) if (!numbers[i].match(/[1-9]/)) return false;
+  return true;
 }
 function isDuplicate(numbers) {
   const sizeOfSet = makeSet(numbers).size;
-  if (sizeOfSet !== sizeOfNumbers) return 1;
-  return 0;
+  if (sizeOfSet !== sizeOfNumbers) return true;
+  return false;
 }
 function makeSet(numbers) {
   const set = new Set();
