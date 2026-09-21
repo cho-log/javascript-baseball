@@ -3,7 +3,7 @@ export default class BaseballGame {
     if (!isValid(userInputNumbers)) return '';
 
     const strike = countStrike(computerInputNumbers, userInputNumbers);
-    const ball = countSame(computerInputNumbers, userInputNumbers) - strike;
+    const ball = countSameNumber(computerInputNumbers, userInputNumbers) - strike;
     const answer = makeAnswer(ball, strike);
     return answer;
   }
@@ -29,8 +29,7 @@ function isValid(numbers) {
   return 1;
 }
 function isInRange(numbers) {
-  for (let i = 0; i < numbers.length; i++)
-    if (!numbers[i].match(/[1-9]/)) return 0;
+  for (let i = 0; i < numbers.length; i++) if (!numbers[i].match(/[1-9]/)) return 0;
   return 1;
 }
 function isDuplicate(numbers) {
@@ -43,14 +42,14 @@ function makeSet(numbers) {
   for (let i = 0; i < numbers.length; i++) set.add(numbers[i]);
   return set;
 }
-function countSame(numbers1, numbers2) {
+function countSameNumber(numbers1, numbers2) {
   let count = 0;
   for (let i = 0; i < sizeOfNumbers; i++) {
-    count += checkSame(numbers1, numbers2[i]);
+    count += checkSameNumber(numbers1, numbers2[i]);
   }
   return count;
 }
-function checkSame(numbers, number) {
+function checkSameNumber(numbers, number) {
   for (let i = 0; i < sizeOfNumbers; i++) {
     if (numbers[i] === number) return 1;
   }
