@@ -34,7 +34,7 @@ function validateInput(input) {
 }
 
 function showWinUI() {
-  resultDiv.innerHTML = '🎉 정답을 맞히셨습니다! 🎉';
+  resultDiv.textContent = '🎉 정답을 맞히셨습니다! 🎉';
   restartQuestion.style.display = 'block';
   restartButton.style.display = 'block';
   submitButton.disabled = true;
@@ -44,7 +44,7 @@ function showResult(result) {
   if (result === '3스트라이크') {
     showWinUI();
   } else {
-    resultDiv.innerHTML = result;
+    resultDiv.textContent = result;
   }
 }
 
@@ -57,7 +57,7 @@ function handleInputError(error) {
 function resetGame() {
   computerNumbers = generateComputerNumbers();
   userInput.value = '';
-  resultDiv.innerHTML = '';
+  resultDiv.textContent = '';
   restartQuestion.style.display = 'none';
   restartButton.style.display = 'none';
   submitButton.disabled = false;
