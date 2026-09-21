@@ -22,14 +22,14 @@ function generateComputerNumbers() {
 
 function validateInput(input) {
   if (input.length !== 3) {
-    throw new Error('[ERROR] 숫자는 반드시 3자리여야 합니다.');
+    throw new Error('숫자는 반드시 3자리여야 합니다.');
   }
   if (!/^[1-9]{3}$/.test(input)) {
-    throw new Error('[ERROR] 1부터 9까지의 숫자만 입력할 수 있습니다.');
+    throw new Error('1부터 9까지의 숫자만 입력할 수 있습니다.');
   }
   const uniqueNumbers = new Set(input);
   if (uniqueNumbers.size !== 3) {
-    throw new Error('[ERROR] 중복된 숫자는 입력할 수 없습니다.');
+    throw new Error('중복된 숫자는 입력할 수 없습니다.');
   }
 }
 
