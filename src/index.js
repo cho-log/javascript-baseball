@@ -34,7 +34,7 @@ function isInRange(numbers) {
   return 1;
 }
 function isDuplicate(numbers) {
-  const sizeOfSet = makeSet(numbers).length;
+  const sizeOfSet = makeSet(numbers).size;
   if (sizeOfSet !== sizeOfNumbers) return 1;
   return 0;
 }
