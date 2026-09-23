@@ -1,3 +1,4 @@
+
 <p align="middle" >
   <img width="200px;" src="https://github.com/woowacourse/javascript-baseball-precourse/blob/main/images/baseball_icon.png?raw=true"/>
 </p>
@@ -9,7 +10,7 @@
 - 세 개의 요구사항을 만족하기 위해 노력한다. 특히 기능을 구현하기 전에 기능 목록을 만들고, 기능 단위로 커밋 하는 방식으로 진행한다.
 
 ---
-
+테테스트123
 ## 🎯 기능 요구사항
 
 기본적으로 1부터 9까지 서로 다른 수로 이루어진 3자리의 수를 맞추는 게임이다.
