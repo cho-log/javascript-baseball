@@ -8,11 +8,13 @@ export default class BaseballGame {
     return answer;
   }
 }
+
 function displayButton(button, flag) {
   if (flag === 1) button.style.display = 'block';
   else button.style.display = 'none';
   return;
 }
+
 function isValid(numbers) {
   if (!isInRange(numbers)) {
     alert('1~9사이의 숫자가 아닙니다.');
@@ -28,33 +30,39 @@ function isValid(numbers) {
   }
   return true;
 }
+
 function isInRange(numbers) {
   for (let i = 0; i < numbers.length; i++) if (!numbers[i].match(/[1-9]/)) return false;
   return true;
 }
+
 function isDuplicate(numbers) {
   const sizeOfSet = makeSet(numbers).size;
   if (sizeOfSet !== sizeOfNumbers) return true;
   return false;
 }
+
 function makeSet(numbers) {
   const set = new Set();
   for (let i = 0; i < numbers.length; i++) set.add(numbers[i]);
   return set;
 }
+
 function countSameNumber(numbers1, numbers2) {
   let count = 0;
   for (let i = 0; i < sizeOfNumbers; i++) {
-    count += checkSameNumber(numbers1, numbers2[i]);
+    count += checkSameNumber(numbers1, numbers2[i]) ? 1 : 0;
   }
   return count;
 }
+
 function checkSameNumber(numbers, number) {
   for (let i = 0; i < sizeOfNumbers; i++) {
-    if (numbers[i] === number) return 1;
+    if (numbers[i] === number) return true;
   }
-  return 0;
+  return false;
 }
+
 function countStrike(numbers1, numbers2) {
   let count = 0;
   for (let i = 0; i < sizeOfNumbers; i++) {
@@ -62,6 +70,7 @@ function countStrike(numbers1, numbers2) {
   }
   return count;
 }
+
 function makeAnswer(ball, strike) {
   if (strike === 3) {
     displayButton(restartButton, 1);
@@ -72,6 +81,7 @@ function makeAnswer(ball, strike) {
   if (strike === 0) return ball + '볼';
   return ball + '볼 ' + strike + '스트라이크';
 }
+
 function makeNumbers() {
   const numbers = [];
   while (1) {
