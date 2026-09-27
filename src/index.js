@@ -37,15 +37,10 @@ function isInRange(numbers) {
 }
 
 function isDuplicate(numbers) {
-  const sizeOfSet = makeSet(numbers).size;
+  const set = new Set(numbers);
+  const sizeOfSet = set.size;
   if (sizeOfSet !== sizeOfNumbers) return true;
   return false;
-}
-
-function makeSet(numbers) {
-  const set = new Set();
-  for (let i = 0; i < numbers.length; i++) set.add(numbers[i]);
-  return set;
 }
 
 function countSameNumber(numbers1, numbers2) {
